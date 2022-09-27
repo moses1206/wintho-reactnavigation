@@ -1,25 +1,60 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-function HomeScreen() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+import Home from './src/Home';
+import User from './src/User';
+import LogoPic from './src/LogoPic';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Navigator
+        initialRouteName="Home"
+        // 모든 네비게이션에 공통의 스택 스타일 적용
+        screenOptions={{
+          headerStyle: {backgroundColor: 'yellow'},
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            headerTintColor: '#fff',
+            fontWeight: 'bold',
+            color: 'purple',
+          },
+        }}>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: 'Home Screen',
+            headerTitle: (
+              <Image
+                style={{width: 40, height: 40}}
+                source={require('./src/assets/pics/home_icon.png')}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="User"
+          component={User}
+          //스택 생성시 Root Params 초기화
+          initialParams={{
+            userIdx: 50,
+            userName: 'GilDong',
+            userLastName: 'Go',
+          }}
+          // 단일 스택의 스타일 변경
+          options={{
+            title: 'User Screen',
+            headerStyle: {backgroundColor: 'pink'},
+            headerTintColor: 'red',
+            headerTitleStyle: {fontWeight: 'bold', color: 'purple'},
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
