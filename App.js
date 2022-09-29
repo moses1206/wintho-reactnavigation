@@ -1,7 +1,7 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './src/Home';
@@ -11,6 +11,13 @@ import LogoPic from './src/LogoPic';
 const Stack = createNativeStackNavigator();
 
 function App() {
+  // const logoTitle = () => (
+  //   <Image
+  //     style={{width: 40, height: 40}}
+  //     source={require('./src/assets/pics/home_icon.png')}
+  //   />
+  // );
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -30,10 +37,12 @@ function App() {
           component={Home}
           options={{
             title: 'Home Screen',
-            headerTitle: (
-              <Image
-                style={{width: 40, height: 40}}
-                source={require('./src/assets/pics/home_icon.png')}
+            headerTitle: LogoPic,
+            headerRight: () => (
+              <Button
+                title="info"
+                onPress={() => alert('I am a Button!!')}
+                color="orange"
               />
             ),
           }}
@@ -53,6 +62,7 @@ function App() {
             headerStyle: {backgroundColor: 'pink'},
             headerTintColor: 'red',
             headerTitleStyle: {fontWeight: 'bold', color: 'purple'},
+            headerBackTitle: 'BACK',
           }}
         />
       </Stack.Navigator>
