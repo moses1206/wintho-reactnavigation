@@ -24,7 +24,7 @@ const User = props => {
       headerRight: () => (
         <Button
           title="Go Back"
-          onPress={() => props.navigation.navigate('Home')}
+          onPress={() => props.navigation.navigate('HomeDrawer')}
           color="orange"
         />
       ),

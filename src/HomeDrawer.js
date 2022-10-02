@@ -7,13 +7,7 @@ const HomeDrawer = ({navigation}) => {
       <Text>Home</Text>
       <Button
         title="Move User"
-        onPress={() =>
-          navigation.navigate('User', {
-            userIdx: 100,
-            userName: 'GilDong',
-            userLastName: 'Hong',
-          })
-        }
+        onPress={() => navigation.navigate('UserDrawer')}
       />
     </View>
   );

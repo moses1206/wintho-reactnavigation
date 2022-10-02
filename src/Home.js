@@ -8,7 +8,7 @@ const Home = ({navigation}) => {
       <Button
         title="Move User"
         onPress={() =>
-          navigation.navigate('User', {
+          navigation.navigate('UserDrawer', {
             userIdx: 100,
             userName: 'GilDong',
             userLastName: 'Hong',
