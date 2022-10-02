@@ -1,7 +1,7 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 
-const User = props => {
+const StackUser = props => {
   const {params} = props.route;
   const userIdx = params ? params.userIdx : null;
   const userName = params ? params.userName : null;
@@ -24,7 +24,7 @@ const User = props => {
       headerRight: () => (
         <Button
           title="Go Back"
-          onPress={() => props.navigation.navigate('HomeDrawer')}
+          onPress={() => props.navigation.navigate('StackHome')}
           color="orange"
         />
       ),
@@ -39,7 +39,7 @@ const User = props => {
       <Text>User</Text>
       <Button
         title="Go To Home"
-        onPress={() => props.navigation.navigate('Home')}
+        onPress={() => props.navigation.navigate('StackHome')}
       />
       <Text>User idx: {JSON.stringify(userIdx)}</Text>
       <Text>User Name: {JSON.stringify(userName)}</Text>
@@ -48,6 +48,6 @@ const User = props => {
   );
 };
 
-export default User;
+export default StackUser;
 
 const styles = StyleSheet.create({});

@@ -25,12 +25,12 @@ const CustomSideDrawer = ({navigation}) => {
           <View style={styles.navSectionStyle}>
             <Text
               style={styles.navItemStyle}
-              onPress={navigateToScreen('HomeDrawer')}>
+              onPress={navigateToScreen('StackHome')}>
               Home
             </Text>
             <Text
               style={styles.navItemStyle}
-              onPress={navigateToScreen('UserDrawer')}>
+              onPress={navigateToScreen('StackUser')}>
               User
             </Text>
             <Text

@@ -1,14 +1,14 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const Home = ({navigation}) => {
+const StackHome = ({navigation}) => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home</Text>
       <Button
         title="Move User"
         onPress={() =>
-          navigation.navigate('UserDrawer', {
+          navigation.navigate('TabUser', {
             userIdx: 100,
             userName: 'GilDong',
             userLastName: 'Hong',
@@ -29,6 +29,6 @@ const Home = ({navigation}) => {
   );
 };
 
-export default Home;
+export default StackHome;
 
 const styles = StyleSheet.create({});

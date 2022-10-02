@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import React from 'react';
 
-const TabUser = ({navigation}) => {
+const TabUser = props => {
   return (
     <View style={styles.container}>
       <Text>Tab UserScreen</Text>
